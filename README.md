@@ -29,7 +29,7 @@ end
 
 ## Output
 
-[![asciicast](https://asciinema.org/a/hUlgq4iKevGRcEovHZPOlHb32.svg)](https://asciinema.org/a/hUlgq4iKevGRcEovHZPOlHb32)
+<script id="asciicast-360030" src="https://asciinema.org/a/360030.js" async></script>
 
 ```bash
 > simple-ls
