@@ -13,6 +13,8 @@ Note that `.DS_Store` is not considered in the `... hidden files` count to avoid
 
 ## Output
 
+[![asciicast](https://asciinema.org/a/hUlgq4iKevGRcEovHZPOlHb32.svg)](https://asciinema.org/a/hUlgq4iKevGRcEovHZPOlHb32)
+
 ```bash
 > simple-ls
 /Users/Gira/simple-ls (2 hidden dirs)
