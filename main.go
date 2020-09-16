@@ -43,7 +43,7 @@ func getCountString(e extract) string {
 	}
 
 	if fileString == "" {
-		return " " + dirsString
+		return " (" + dirsString + ")"
 	}
 
 	if dirsString == "" {
