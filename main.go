@@ -5,6 +5,7 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strings"
 
 	"github.com/Gira-X/go-columnize"
 	terminal "github.com/wayneashleyberry/terminal-dimensions"
@@ -119,5 +120,11 @@ func main() {
 		print("\u001B[0m")
 	}
 
-	print(columnize.Format(e.Files, opts))
+	files := columnize.Format(e.Files, opts)
+	// this behaves a bit different depending if there is only a single row
+	if strings.HasSuffix(files, "\n") {
+		print(files)
+	} else {
+		println(files)
+	}
 }
