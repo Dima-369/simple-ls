@@ -2,8 +2,8 @@ package main
 
 import "os"
 
-// Extract contains the extraction from Readdir().
-type Extract struct {
+// extract contains the extraction from Readdir().
+type extract struct {
 	Files []string
 	Dirs  []string
 
@@ -11,9 +11,9 @@ type Extract struct {
 	HiddenDirs  int
 }
 
-// AppendIfMatching considers the passed file and appends it to Extract.Files or Extract.Dirs
+// appendIfMatching considers the passed file and appends it to extract.Files or extract.Dirs
 // if it is matching the hidden setting.
-func (e *Extract) AppendIfMatching(file os.FileInfo, displayOnlyHidden bool) {
+func (e *extract) appendIfMatching(file os.FileInfo, displayOnlyHidden bool) {
 	name := file.Name()
 	isHidden := name[:1] == "."
 
@@ -32,13 +32,13 @@ func (e *Extract) AppendIfMatching(file os.FileInfo, displayOnlyHidden bool) {
 	}
 }
 
-func (e *Extract) appendDir(dir string, displayOnlyHidden bool) {
+func (e *extract) appendDir(dir string, displayOnlyHidden bool) {
 	if shouldAppendForDisplay(dir, displayOnlyHidden) {
 		e.Dirs = append(e.Dirs, dir)
 	}
 }
 
-func (e *Extract) appendFile(fileName string, displayOnlyHidden bool) {
+func (e *extract) appendFile(fileName string, displayOnlyHidden bool) {
 	if shouldAppendForDisplay(fileName, displayOnlyHidden) {
 		e.Files = append(e.Files, fileName)
 	}

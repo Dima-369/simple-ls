@@ -10,17 +10,17 @@ import (
 	terminal "github.com/wayneashleyberry/terminal-dimensions"
 )
 
-func splitIntoFilesAndDirs(dir []os.FileInfo, displayOnlyHidden bool) Extract {
-	output := Extract{}
+func splitIntoFilesAndDirs(dir []os.FileInfo, displayOnlyHidden bool) extract {
+	output := extract{}
 
 	for _, file := range dir {
-		output.AppendIfMatching(file, displayOnlyHidden)
+		output.appendIfMatching(file, displayOnlyHidden)
 	}
 
 	return output
 }
 
-func getCountString(e Extract) string {
+func getCountString(e extract) string {
 	if e.HiddenFiles == 0 && e.HiddenDirs == 0 {
 		return ""
 	}
