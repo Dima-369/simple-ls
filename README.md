@@ -8,8 +8,8 @@ This generates the command `simple-ls` in `GOPATH/bin` or `GOBIN`.
 
 It only supports the command argument `hidden` which only lists hidden directories and files.
 
-Note that `.DS_Store` is not considered in the `... hidden files` count to avoid many directory listings
-where the `.DS_Store` is the only hidden file.
+Note that `.DS_Store` is not considered in the `... hidden files` count to avoid printing
+`(1 hidden file)` where `.DS_Store` is the only hidden file.
 
 ## Output
 
