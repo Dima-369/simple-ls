@@ -29,6 +29,8 @@ end
 
 ## Output
 
+Directories are printed in a blue foreground.
+
 [![asciicast](https://asciinema.org/a/360030.svg)](https://asciinema.org/a/360030)
 
 ```bash
