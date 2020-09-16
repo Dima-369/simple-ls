@@ -26,7 +26,9 @@ LICENSE  README.md  extract.go  go.mod  go.sum  main.go
 > simple-ls hidden
 /Users/Gira/simple-ls (2 hidden dirs)
 
-LICENSE  README.md  extract.go  go.mod  go.sum  main.go
+.git  .idea
+
+.DS_Store
 ```
 
 ## Easy bash usage
