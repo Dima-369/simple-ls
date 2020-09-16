@@ -13,26 +13,33 @@ where the `.DS_Store` is the only hidden file.
 
 ## Output
 
-
-
-## Easy bash usage
-
-I rarely use the default `ls` and I am instead using those aliases in [fish](https://fishshell.com/)
-with `simple-ls` renamed to `l`.
-
 ```bash
-> type l
+> simple-ls
+/Users/Gira/simple-ls (2 hidden dirs)
 
-l is /Users/Gira/Documents/go/bin/l
+LICENSE  README.md  extract.go  go.mod  go.sum  main.go
 ```
 
 ```bash
-> type lh
+> simple-ls hidden
+/Users/Gira/simple-ls (2 hidden dirs)
 
-lh is a function with definition
-# Defined in /Users/Gira/.config/fish/config.fish @ line 174
+LICENSE  README.md  extract.go  go.mod  go.sum  main.go
+```
+
+## Easy bash usage
+
+I rarely use the default `ls` and I am instead using those functions in my 
+[fish shell](https://fishshell.com/)
+in `config.fish` with `simple-ls` renamed to `l`:
+
+```bash
+function l
+	simple-ls
+end
+
 function lh
-	l hidden
+	simple-ls hidden
 end
 ```
 
