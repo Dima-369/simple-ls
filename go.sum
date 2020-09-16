@@ -1,0 +1,4 @@
+github.com/Gira-X/go-columnize v0.0.0-20200916082437-311124034826 h1:mxQseTrt7XoCX8UK2T1Yd045PzBqNoPTxejZEXH0U70=
+github.com/Gira-X/go-columnize v0.0.0-20200916082437-311124034826/go.mod h1:YRo5BZDz9uBINY8IMCvOy6YW6quVPm7LYzWWhu4LPQ8=
+github.com/wayneashleyberry/terminal-dimensions v1.0.0 h1:LawtS1nqKjAfqrmKOzkcrDLAjSzh38lEhC401JPjQVA=
+github.com/wayneashleyberry/terminal-dimensions v1.0.0/go.mod h1:PW2XrtV6KmKOPhuf7wbtcmw1/IFnC39mryRET2XbxeE=

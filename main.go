@@ -2,13 +2,12 @@ package main
 
 import (
 	"fmt"
-	"mine/helpers/colorutil"
-	"mine/helpers/terminal"
 	"os"
 	"path/filepath"
 	"sort"
 
 	"github.com/Gira-X/go-columnize"
+	terminal "github.com/wayneashleyberry/terminal-dimensions"
 )
 
 func splitIntoFilesAndDirs(dir []os.FileInfo, displayOnlyHidden bool) Extract {
@@ -54,6 +53,19 @@ func getCountString(e Extract) string {
 	return " (" + fileString + ", " + dirsString + ")"
 }
 
+func getTerminalWidthOr80() (int, error) {
+	displayWidth, err := terminal.Width()
+	if err != nil {
+		return 0, err
+	}
+
+	if displayWidth == 0 {
+		displayWidth = 80
+	}
+
+	return int(displayWidth), nil
+}
+
 func main() {
 	displayOnlyHidden := false
 
@@ -83,7 +95,7 @@ func main() {
 	sort.Strings(e.Dirs)
 	sort.Strings(e.Files)
 
-	width, err := terminal.GetWidthOr80()
+	width, err := getTerminalWidthOr80()
 	if err != nil {
 		panic(err)
 	}
@@ -92,7 +104,8 @@ func main() {
 	opts.DisplayWidth = width
 
 	if len(e.Dirs) >= 1 {
-		print(colorutil.BlueFg)
+		// this is the ASCII code for a blue foreground
+		print("\u001B[34m")
 
 		out := columnize.Format(e.Dirs, opts)
 		if out[len(out)-1:] != "\n" {
@@ -102,7 +115,8 @@ func main() {
 		}
 
 		println(out)
-		print(colorutil.ColorReset)
+		// this is the ASCII code for a color reset
+		print("\u001B[0m")
 	}
 
 	print(columnize.Format(e.Files, opts))
