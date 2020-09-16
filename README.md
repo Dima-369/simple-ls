@@ -11,6 +11,22 @@ It only supports the command argument `hidden` which only lists hidden directori
 Note that `.DS_Store` is not considered in the `... hidden files` count to avoid printing
 `(1 hidden file)` where `.DS_Store` is the only hidden file.
 
+## Fish shell functions
+
+I rarely use the default `ls` and I am instead using those functions in my 
+[fish shell](https://fishshell.com/)
+in `config.fish` with `simple-ls` renamed to `l`:
+
+```bash
+function l
+	simple-ls
+end
+
+function lh
+	simple-ls hidden
+end
+```
+
 ## Output
 
 [![asciicast](https://asciinema.org/a/hUlgq4iKevGRcEovHZPOlHb32.svg)](https://asciinema.org/a/hUlgq4iKevGRcEovHZPOlHb32)
@@ -30,20 +46,3 @@ LICENSE  README.md  extract.go  go.mod  go.sum  main.go
 
 .DS_Store
 ```
-
-## Easy bash usage
-
-I rarely use the default `ls` and I am instead using those functions in my 
-[fish shell](https://fishshell.com/)
-in `config.fish` with `simple-ls` renamed to `l`:
-
-```bash
-function l
-	simple-ls
-end
-
-function lh
-	simple-ls hidden
-end
-```
-
