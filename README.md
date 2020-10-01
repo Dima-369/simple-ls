@@ -8,9 +8,6 @@ This generates the command `simple-ls` in `GOPATH/bin` or `GOBIN`.
 
 It only supports the command argument `hidden` which only lists hidden directories and files.
 
-Note that `.DS_Store` is not considered in the `... hidden files` count to avoid printing
-`(1 hidden file)` where `.DS_Store` is the only hidden file.
-
 ## Fish shell functions
 
 I rarely use the default `ls` and I am instead using those functions in my 
@@ -39,6 +36,10 @@ Directories are printed in a blue foreground.
 
 LICENSE  README.md  extract.go  go.mod  go.sum  main.go
 ```
+
+Note that `.DS_Store` is not considered in the `... hidden files` count to avoid printing
+`(1 hidden file)` where `.DS_Store` is the only hidden file, and generally the file system
+is littered with those files anyway.
 
 ```bash
 > simple-ls hidden
